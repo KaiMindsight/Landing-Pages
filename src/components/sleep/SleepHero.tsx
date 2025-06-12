@@ -6,7 +6,7 @@ const SleepHero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const productImages = [
-    "https://mindsightnow.com/cdn/shop/files/Copy_of_1200_5_Star_Reviews_2_06694f2a-22dc-4fa5-9385-87280e342a78.png?v=1749684499",
+    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Copy_of_1200_5_Star_Reviews_3.png?v=1749704376",
     "https://mindsightnow.com/cdn/shop/files/2_4ab61a8e-ab22-4092-afed-e9bd0f866e49_720x.jpg?v=1749270876",
     "https://mindsightnow.com/cdn/shop/files/3_89e33379-0867-4a00-9dd2-f91fd88fd457_720x.jpg?v=1749270876",
     "https://mindsightnow.com/cdn/shop/files/4_d1e12971-ee23-4d1b-b5c0-0c9e90fd5039_720x.jpg?v=1749270876",
