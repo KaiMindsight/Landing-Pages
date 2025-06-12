@@ -64,7 +64,8 @@ const PhoneFeatures = () => {
             
             <div className="space-y-4">
               <button 
-                className="bg-orange-400 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-500 transition-all duration-300 block w-fit"
+                className="text-white px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all duration-300 block w-fit"
+                style={{ backgroundColor: '#1b2b4a' }}
                 onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
               >
                 ORDER NOW

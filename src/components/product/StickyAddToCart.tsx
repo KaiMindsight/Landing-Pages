@@ -30,7 +30,7 @@ const StickyAddToCart = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-2 md:p-4">
-      <div className="max-w-4xl mx-auto shadow-2xl rounded-xl" style={{ backgroundColor: '#171717' }}>
+      <div className="max-w-4xl mx-auto shadow-2xl rounded-xl" style={{ backgroundColor: '#FFFFFF' }}>
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center justify-between gap-4 p-4">
           <div className="flex items-center gap-4">
@@ -42,22 +42,22 @@ const StickyAddToCart = () => {
               />
             </div>
             <div>
-              <h3 className="font-bold text-white">Mindsight Timed Lockbox</h3>
-              <p className="text-sm text-gray-300">Transform your relationship with technology</p>
+              <h3 className="font-bold" style={{ color: '#171717' }}>Mindsight Timed Lockbox</h3>
+              <p className="text-sm" style={{ color: '#888888' }}>Transform your relationship with technology</p>
             </div>
           </div>
           
-          <div className="flex items-center gap-4">
-            <div className="text-right">
-              <div className="flex items-center gap-2">
-                <span className="text-lg text-gray-400 line-through">$40.00</span>
-                <span className="text-2xl font-bold text-white">$30.00</span>
-                <span className="text-sm bg-red-500 text-white px-2 py-1 rounded">25% OFF</span>
+                      <div className="flex items-center gap-4">
+              <div className="text-right">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg text-gray-400 line-through">$40.00</span>
+                  <span className="text-2xl font-bold" style={{ color: '#171717' }}>$30.00</span>
+                  <span className="text-sm bg-red-500 text-white px-2 py-1 rounded">25% OFF</span>
+                </div>
               </div>
-            </div>
             <Button 
               className="text-lg px-8 py-6 font-semibold"
-              style={{ backgroundColor: '#5684C4', color: 'white' }}
+              style={{ backgroundColor: '#1b2b4a', color: 'white' }}
               onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
             >
               Add to Cart
@@ -77,17 +77,17 @@ const StickyAddToCart = () => {
                 />
               </div>
               <div>
-                <h3 className="font-bold text-white text-sm">Mindsight Lockbox</h3>
+                <h3 className="font-bold text-sm" style={{ color: '#171717' }}>Mindsight Lockbox</h3>
                 <div className="flex items-center gap-2">
                   <span className="text-sm text-gray-400 line-through">$40.00</span>
-                  <span className="text-lg font-bold text-white">$30.00</span>
+                  <span className="text-lg font-bold" style={{ color: '#171717' }}>$30.00</span>
                 </div>
               </div>
             </div>
             
             <Button 
               className="text-sm px-4 py-3 font-semibold whitespace-nowrap"
-              style={{ backgroundColor: '#5684C4', color: 'white' }}
+              style={{ backgroundColor: '#1b2b4a', color: 'white' }}
               onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
             >
               Order Now
