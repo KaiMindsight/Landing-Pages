@@ -78,22 +78,11 @@ const FAQ = () => {
             href="https://mindsightnow.com/pages/support"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3 text-lg font-semibold rounded-md border transition-all duration-100 ease-in-out"
+            className="inline-block px-8 py-3 text-lg font-semibold rounded-md border transition-all duration-100 ease-in-out btn-orange"
             style={{ 
-              backgroundColor: '#1b2b4a',
-              color: '#fff',
-              boxShadow: '0 0 0 1px #1b2b4a',
               minWidth: '148px',
               borderRadius: '5px',
               textDecoration: 'none'
-            }}
-            onMouseOver={(e) => {
-              const target = e.target as HTMLElement;
-              target.style.filter = 'contrast(90%) brightness(1.1)';
-            }}
-            onMouseOut={(e) => {
-              const target = e.target as HTMLElement;
-              target.style.filter = 'none';
             }}
           >
             Contact Support

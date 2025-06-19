@@ -32,7 +32,7 @@ const CountdownBar = () => {
   }, []);
 
   return (
-    <div className="w-full py-3 text-center text-white font-semibold" style={{ backgroundColor: '#d32f2f' }}>
+    <div className="w-full py-3 text-center text-white font-semibold" style={{ backgroundColor: 'rgb(27, 43, 74)' }}>
       <div className="max-w-7xl mx-auto px-4">
         <span className="text-sm md:text-base">
           🔥 LIMITED TIME: 25% OFF ENDS IN {timeLeft.days} DAY{timeLeft.days !== 1 ? 'S' : ''} {timeLeft.hours}H {timeLeft.minutes}M {timeLeft.seconds}S

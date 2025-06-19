@@ -38,8 +38,8 @@ const PhoneFeatures = () => {
               </div>
               
               <div>
-                <div className="text-6xl font-bold mb-2">10yr</div>
-                <div className="text-lg leading-tight">Cognitive improvement equivalent to being 10 years younger</div>
+                <div className="text-6xl font-bold mb-2">85%</div>
+                <div className="text-lg leading-tight">Improved sleep quality within 2 weeks of reducing phone use</div>
               </div>
             </div>
             
@@ -64,8 +64,7 @@ const PhoneFeatures = () => {
             
             <div className="space-y-4">
               <button 
-                className="text-white px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all duration-300 block w-fit"
-                style={{ backgroundColor: '#1b2b4a' }}
+                className="text-white px-8 py-4 rounded-full font-bold text-lg btn-orange transition-all duration-300 block w-fit"
                 onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
               >
                 ORDER NOW

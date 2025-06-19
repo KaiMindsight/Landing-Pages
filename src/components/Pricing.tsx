@@ -24,11 +24,8 @@ const Pricing = () => {
             
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-3 mb-2">
-                <span className="text-2xl text-gray-400 line-through">$60.00</span>
+                <span className="text-2xl text-gray-400 line-through">$40.00</span>
                 <span className="text-5xl font-bold" style={{ color: '#171717' }}>$30.00</span>
-              </div>
-              <div className="mb-2">
-                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">50% OFF LIMITED TIME</span>
               </div>
               <div style={{ color: '#171717' }}>One-time purchase</div>
             </div>
@@ -54,53 +51,15 @@ const Pricing = () => {
             </div>
 
             <button 
-              className="w-full py-4 text-lg font-semibold rounded-md border-0 transition-all duration-100 ease-in-out"
-              style={{ 
-                backgroundColor: '#1b2b4a',
-                color: '#fff',
-                boxShadow: '0 0 0 1px #1b2b4a',
-                minWidth: '148px',
-                padding: '11px 39px',
-                borderRadius: '5px'
-              }}
-              onMouseOver={(e) => {
-                (e.target as HTMLElement).style.filter = 'contrast(90%) brightness(1.1)';
-              }}
-              onMouseOut={(e) => {
-                (e.target as HTMLElement).style.filter = 'none';
-              }}
+              className="w-full py-4 text-lg font-semibold rounded-md border-0 transition-all duration-100 ease-in-out btn-orange"
               onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
             >
               Order Now - $30.00
             </button>
 
             <div className="text-center mt-4 text-sm" style={{ color: '#171717' }}>
-              Secure checkout • Ships within 24 hours
+              30 Day Money Back Guarantee • Lifetime Warranty • Free shipping over $75
             </div>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mt-16">
-          <div className="text-center">
-            <div 
-              className="rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
-              style={{ backgroundColor: '#5684C4' }}
-            >
-              <Shield className="text-white" size={32} />
-            </div>
-            <h3 className="text-xl font-semibold mb-2" style={{ color: '#171717' }}>Lifetime Warranty</h3>
-            <p style={{ color: '#171717' }}>Full warranty coverage for peace of mind and long-lasting quality.</p>
-          </div>
-
-          <div className="text-center">
-            <div 
-              className="rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
-              style={{ backgroundColor: '#5684C4' }}
-            >
-              <HeartHandshake className="text-white" size={32} />
-            </div>
-            <h3 className="text-xl font-semibold mb-2" style={{ color: '#171717' }}>30-Day Guarantee</h3>
-            <p style={{ color: '#171717' }}>Not satisfied? Get your money back within 30 days, no questions asked.</p>
           </div>
         </div>
       </div>

@@ -1,30 +1,79 @@
-import { Star } from "lucide-react";
+import { Star, ThumbsUp, ThumbsDown } from "lucide-react";
+import { useState } from "react";
 
 const Testimonials = () => {
+  const [votes, setVotes] = useState({
+    0: { likes: 87, dislikes: 13, userVote: null },
+    1: { likes: 58, dislikes: 4, userVote: null },
+    2: { likes: 92, dislikes: 8, userVote: null },
+    3: { likes: 76, dislikes: 6, userVote: null }
+  });
+
+  const handleVote = (testimonialIndex, voteType) => {
+    setVotes(prev => {
+      const currentVote = prev[testimonialIndex];
+      let newLikes = currentVote.likes;
+      let newDislikes = currentVote.dislikes;
+      let newUserVote = voteType;
+
+      // If user already voted, undo previous vote
+      if (currentVote.userVote === 'like') {
+        newLikes--;
+      } else if (currentVote.userVote === 'dislike') {
+        newDislikes--;
+      }
+
+      // If clicking same vote type, remove vote
+      if (currentVote.userVote === voteType) {
+        newUserVote = null;
+      } else {
+        // Add new vote
+        if (voteType === 'like') {
+          newLikes++;
+        } else {
+          newDislikes++;
+        }
+      }
+
+      return {
+        ...prev,
+        [testimonialIndex]: {
+          likes: newLikes,
+          dislikes: newDislikes,
+          userVote: newUserVote
+        }
+      };
+    });
+  };
+
   const testimonials = [
     {
       name: "Elena",
       role: "Verified Purchase",
       rating: 5,
-      text: "This little lock box is perfect for storing our 15-year-old's cell phone during the school day. This way, he can have access to it when school is over without having to wait for us to come home from work, but we can also help him stay on track during the school day without the distraction of the phone. It's the best!"
+      text: "This lockbox is perfect for storing our teen's phone during school. He can access it after school without waiting for us, but stays focused during the day. It's been a game-changer for our family!",
+      image: "https://m.media-amazon.com/images/I/618RwqoHf+L.jpg"
     },
     {
       name: "Lema",
       role: "Verified Purchase", 
       rating: 5,
-      text: "Sturdy, did the job, with long battery life. The battery life is really good. was able to hide my phone and multiple controller accessories to avoid distraction. Have used it for about a year, and haven't replaced the battery once."
+      text: "Sturdy build with excellent battery life. I use it to lock away my phone and gaming controllers to avoid distractions. Been using it for a year and haven't replaced the battery once. Highly recommend!",
+      image: "https://m.media-amazon.com/images/I/71rePV-hpxL.jpg"
     },
     {
       name: "Rick",
       role: "Verified Purchase",
       rating: 5,
-      text: "Despite some momentary confusion on where the batteries are supposed to go, this arrived promptly, and turned out to be very user friendly, and works perfectly. I recommend this to anyone with struggles bringing personal habits under control."
+      text: "Despite initial confusion with battery placement, this arrived quickly and proved very user-friendly. Works perfectly and I recommend it to anyone struggling with personal habits. Great investment!",
+      image: "https://m.media-amazon.com/images/I/61H6Sr-6oTL.jpg"
     },
     {
       name: "Sarah",
       role: "Verified Purchase",
       rating: 5,
-      text: "This box has been great. Well constructed and easy to use. I accidentally locked myself out in fortress mode for way longer than intended and mindsight was able to provide an emergency code promptly. Definitely recommend over a more expensive well known competitor."
+      text: "Well-constructed and easy to use. I accidentally locked myself out in fortress mode longer than intended, but support provided an emergency code promptly. Much better than expensive competitors!",
+      image: "https://m.media-amazon.com/images/I/714ffUt6cvL.jpg"
     }
   ];
 
@@ -33,7 +82,7 @@ const Testimonials = () => {
       className="py-20 px-4 relative" 
       style={{ 
         backgroundColor: '#F1F1F1',
-        backgroundImage: 'url(https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Untitled_design_20_c70eef92-e994-4f3b-8823-7211f3995154.png?v=1749702759)',
+        backgroundImage: 'url(https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Updated_Background_Seemless_Transition.png?v=1750294683)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -45,12 +94,8 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4" style={{ color: '#171717' }}>
-            A Lockbox With A Fan Club
+            Real Stories. Real Results.
           </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#888888' }}>
-            See what verified customers are saying about the Mindsight Timed Lockbox 
-            and how it's helping them build better habits.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -62,9 +107,45 @@ const Testimonials = () => {
                 ))}
               </div>
               <p className="mb-4 leading-relaxed text-sm" style={{ color: '#171717' }}>"{testimonial.text}"</p>
-              <div>
-                <div className="font-semibold" style={{ color: '#171717' }}>{testimonial.name}</div>
-                <div className="text-sm" style={{ color: '#171717' }}>{testimonial.role}</div>
+              <div className="flex items-center gap-3 mb-4">
+                <img 
+                  src={testimonial.image} 
+                  alt={`${testimonial.name} profile`}
+                  className="w-10 h-10 rounded-full object-cover border-2 border-gray-200"
+                />
+                <div>
+                  <div className="font-semibold" style={{ color: '#171717' }}>{testimonial.name}</div>
+                  <div className="text-sm" style={{ color: '#171717' }}>{testimonial.role}</div>
+                </div>
+              </div>
+              
+              {/* Helpful voting section */}
+              <div className="border-t pt-4">
+                <div className="text-sm mb-2" style={{ color: '#888888' }}>Was it helpful?</div>
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={() => handleVote(index, 'like')}
+                    className={`flex items-center gap-1 px-2 py-1 rounded transition-colors ${
+                      votes[index].userVote === 'like' 
+                        ? 'bg-green-100 text-green-600' 
+                        : 'hover:bg-gray-100 text-gray-600'
+                    }`}
+                  >
+                    <ThumbsUp size={14} />
+                    <span className="text-xs">{votes[index].likes}</span>
+                  </button>
+                  <button
+                    onClick={() => handleVote(index, 'dislike')}
+                    className={`flex items-center gap-1 px-2 py-1 rounded transition-colors ${
+                      votes[index].userVote === 'dislike' 
+                        ? 'bg-red-100 text-red-600' 
+                        : 'hover:bg-gray-100 text-gray-600'
+                    }`}
+                  >
+                    <ThumbsDown size={14} />
+                    <span className="text-xs">{votes[index].dislikes}</span>
+                  </button>
+                </div>
               </div>
             </div>
           ))}

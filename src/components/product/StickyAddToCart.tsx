@@ -56,8 +56,7 @@ const StickyAddToCart = () => {
                 </div>
               </div>
             <Button 
-              className="text-lg px-8 py-6 font-semibold"
-              style={{ backgroundColor: '#1b2b4a', color: 'white' }}
+              className="text-lg px-8 py-6 font-semibold btn-orange"
               onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
             >
               Add to Cart
@@ -86,8 +85,7 @@ const StickyAddToCart = () => {
             </div>
             
             <Button 
-              className="text-sm px-4 py-3 font-semibold whitespace-nowrap"
-              style={{ backgroundColor: '#1b2b4a', color: 'white' }}
+              className="text-sm px-4 py-3 font-semibold whitespace-nowrap btn-orange"
               onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
             >
               Order Now

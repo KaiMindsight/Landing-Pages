@@ -1,13 +1,22 @@
-
-import { Ruler, Weight, Zap, Usb } from "lucide-react";
-
 const ProductSpecs = () => {
   return (
-    <section className="py-20 px-4" style={{ backgroundColor: '#FFFFFF' }}>
-      <div className="max-w-7xl mx-auto">
+    <section 
+      className="py-20 px-4 relative" 
+      style={{ 
+        backgroundColor: '#F1F1F1',
+        backgroundImage: 'url(https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Circle_Background.png?v=1750288943)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      {/* Optional overlay to ensure content readability */}
+      <div className="absolute inset-0 bg-gray-100/20"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4" style={{ color: '#171717' }}>
-            Engineered for Security & Convenience
+            Locking Away Your Phone Has Never Been This Easy
           </h2>
           <p className="text-xl max-w-3xl mx-auto" style={{ color: '#171717' }}>
             Every detail of the Mindsight Timed Lockbox has been carefully designed 
@@ -17,58 +26,12 @@ const ProductSpecs = () => {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="rounded-2xl p-8 text-white" style={{ backgroundColor: '#5684C4' }}>
-              <h3 className="text-2xl font-bold mb-6">Technical Specifications</h3>
-              
-              <div className="grid grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Ruler className="text-blue-200" size={20} />
-                    <div>
-                      <div className="font-semibold">Dimensions</div>
-                      <div className="text-blue-100 text-sm">8" × 2.75" × 4.75"</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-3">
-                    <Weight className="text-blue-200" size={20} />
-                    <div>
-                      <div className="font-semibold">Material</div>
-                      <div className="text-blue-100 text-sm">ABS & PP plastic, impact & heat resistant</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Zap className="text-blue-200" size={20} />
-                    <div>
-                      <div className="font-semibold">Battery</div>
-                      <div className="text-blue-100 text-sm">2× AA (6+ months life)</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-3">
-                    <Usb className="text-blue-200" size={20} />
-                    <div>
-                      <div className="font-semibold">Charging</div>
-                      <div className="text-blue-100 text-sm">Built-in cable slot</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-blue-400">
-                <h4 className="font-semibold mb-3">Fits These Items:</h4>
-                <div className="grid grid-cols-2 gap-2 text-sm text-blue-100">
-                  <div>• 3-4 smartphones</div>
-                  <div>• Medication bottles</div>
-                  <div>• Vape devices</div>
-                  <div>• Small electronics</div>
-                  <div>• Snack packages</div>
-                  <div>• Credit cards</div>
-                </div>
-              </div>
+            <div className="rounded-2xl overflow-hidden">
+              <img 
+                src="https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Dropping_Phone_In_Lockbox.png?v=1750288074"
+                alt="Dropping phone in lockbox demonstration"
+                className="w-full h-auto"
+              />
             </div>
           </div>
 

@@ -8,12 +8,11 @@ const PhoneHero = () => {
   
   const productImages = [
     "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Copy_of_1200_5_Star_Reviews_3.png?v=1749704376",
-    "https://mindsightnow.com/cdn/shop/files/2_4ab61a8e-ab22-4092-afed-e9bd0f866e49_720x.jpg?v=1749270876",
+    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Image_2_Carousel_Lockbox.png?v=1750299592",
     "https://mindsightnow.com/cdn/shop/files/3_89e33379-0867-4a00-9dd2-f91fd88fd457_720x.jpg?v=1749270876",
     "https://mindsightnow.com/cdn/shop/files/4_d1e12971-ee23-4d1b-b5c0-0c9e90fd5039_720x.jpg?v=1749270876",
     "https://mindsightnow.com/cdn/shop/files/5_09d9a3fc-117a-4b72-b666-0e91ccb194c1_720x.jpg?v=1749270876",
     "https://mindsightnow.com/cdn/shop/files/6_988a0177-e964-4b39-ae07-fcf9ce012882_720x.jpg?v=1749270876",
-    "https://mindsightnow.com/cdn/shop/files/7_72007fef-35da-4845-ab7a-c74c18cebe0e_720x.jpg?v=1749270876",
     "https://mindsightnow.com/cdn/shop/files/8_b9b0a5e5-1a24-432e-9f21-313c946313dc_720x.jpg?v=1749270876"
   ];
 
@@ -84,7 +83,7 @@ const PhoneHero = () => {
             {/* Product Title */}
             <div>
               <h1 className="text-4xl font-bold mb-3" style={{ color: '#171717' }}>
-                Beat Phone Addiction
+                Mindsight Timed Lockbox
               </h1>
               <p className="text-xl mb-4" style={{ color: '#888888' }}>
                 Break free from phone addiction and build healthier digital habits
@@ -100,8 +99,8 @@ const PhoneHero = () => {
                     <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <span className="text-sm font-medium" style={{ color: '#171717' }}>4.9 out of 5</span>
-                <span className="text-sm" style={{ color: '#888888' }}>(2,847 reviews)</span>
+                <span className="text-sm font-medium" style={{ color: '#171717' }}>4.6 out of 5</span>
+                <span className="text-sm" style={{ color: '#888888' }}>(1200+ reviews)</span>
               </div>
             </div>
 
@@ -110,10 +109,6 @@ const PhoneHero = () => {
               <div className="flex items-center gap-3">
                 <span className="text-3xl font-bold" style={{ color: '#171717' }}>$30.00</span>
                 <span className="text-xl text-gray-400 line-through">$40.00</span>
-                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">25% OFF</span>
-              </div>
-              <div className="text-sm font-medium" style={{ color: '#5684C4' }}>
-                🔥 Limited time offer - Save $10.00!
               </div>
             </div>
 
@@ -121,38 +116,29 @@ const PhoneHero = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#5684C4' }}></div>
-                <span style={{ color: '#171717' }}>Phone-safe charging slot included</span>
+                <span style={{ color: '#171717' }}>3 willpower modes</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#5684C4' }}></div>
-                <span style={{ color: '#171717' }}>1 minute to 30 days timer settings</span>
+                <span style={{ color: '#171717' }}>Customizable timer</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#5684C4' }}></div>
-                <span style={{ color: '#171717' }}>3 willpower modes for phone addiction</span>
+                <span style={{ color: '#171717' }}>Holds 4-5 phones</span>
               </div>
-            </div>
-
-            {/* Trust Signals */}
-            <div className="flex items-center gap-6 py-4">
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5" style={{ color: '#5684C4' }} />
-                <span className="text-sm" style={{ color: '#171717' }}>30-Day Guarantee</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award className="w-5 h-5" style={{ color: '#5684C4' }} />
-                <span className="text-sm" style={{ color: '#171717' }}>Lifetime Warranty</span>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#5684C4' }}></div>
+                <span style={{ color: '#171717' }}>Tamper proof design</span>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="space-y-4">
               <Button 
-                className="w-full text-lg py-6 font-semibold"
-                style={{ backgroundColor: '#1b2b4a', color: 'white' }}
+                className="w-full text-lg py-6 font-semibold btn-orange"
                 onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
               >
-                Beat Phone Addiction - $30.00
+                Mindsight Timed Lockbox - $30.00
               </Button>
             </div>
 
