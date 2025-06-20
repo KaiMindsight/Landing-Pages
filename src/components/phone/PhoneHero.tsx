@@ -7,7 +7,7 @@ const PhoneHero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const productImages = [
-    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_1.png?v=1750391581",
+    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_1_Updated.png?v=1750392759",
     "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_2.png?v=1750391581",
     "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_3.png?v=1750391581",
     "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_6.png?v=1750391581",
