@@ -59,7 +59,7 @@ const StickyAddToCart = () => {
               className="text-lg px-8 py-6 font-semibold btn-orange"
               onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
             >
-              Add to Cart
+              Buy Now
             </Button>
           </div>
         </div>
@@ -88,7 +88,7 @@ const StickyAddToCart = () => {
               className="text-sm px-4 py-3 font-semibold whitespace-nowrap btn-orange"
               onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
             >
-              Order Now
+              Buy Now
             </Button>
           </div>
         </div>

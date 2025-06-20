@@ -1,7 +1,7 @@
 const ProductSpecs = () => {
   return (
     <section 
-      className="py-20 px-4 relative" 
+      className="pt-0 md:py-20 px-4 relative" 
       style={{ 
         backgroundColor: '#F1F1F1',
         backgroundImage: 'url(https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Circle_Background.png?v=1750288943)',
@@ -14,7 +14,7 @@ const ProductSpecs = () => {
       <div className="absolute inset-0 bg-gray-100/20"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl font-bold mb-4" style={{ color: '#171717' }}>
             Locking Away Your Phone Has Never Been This Easy
           </h2>
@@ -24,7 +24,7 @@ const ProductSpecs = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <div>
             <div className="rounded-2xl overflow-hidden">
               <img 
@@ -35,11 +35,11 @@ const ProductSpecs = () => {
             </div>
           </div>
 
-          <div className="space-y-8">
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6" style={{ color: '#171717' }}>Three Willpower Modes</h3>
+          <div className="space-y-6 md:space-y-8">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 md:p-8">
+              <h3 className="text-2xl font-bold mb-4 md:mb-6" style={{ color: '#171717' }}>Three Willpower Modes</h3>
               
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <div className="bg-white rounded-lg p-4 border-l-4" style={{ borderColor: '#171717' }}>
                   <h4 className="font-semibold mb-2" style={{ color: '#171717' }}>🔓 Lockbox Only</h4>
                   <p className="text-sm" style={{ color: '#171717' }}>Functions as a simple lockbox without timer. Perfect for general storage and organization.</p>

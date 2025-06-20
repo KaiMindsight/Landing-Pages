@@ -86,22 +86,13 @@ const Hero = () => {
                 Mindsight Timed Lockbox
               </h1>
               <p className="text-xl mb-4" style={{ color: '#888888' }}>
-                Break free from distractions and build healthier digital habits
+                Break free from your phone and build healthier digital habits
+              </p>
+              <p className="text-lg mb-6" style={{ color: '#666666' }}>
+                The Mindsight Timed Lockbox is a simple, science-backed tool that helps you reduce screen time, break bad habits, and stay focused—one locked moment at a time.
               </p>
               
-              {/* Reviews - moved here */}
-              <div 
-                className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => window.open('https://www.amazon.com/product-reviews/B094CDSCGN', '_blank')}
-              >
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <span className="text-sm font-medium" style={{ color: '#171717' }}>4.9 out of 5</span>
-                <span className="text-sm" style={{ color: '#888888' }}>(2,847 reviews)</span>
-              </div>
+
             </div>
 
             {/* Price */}
@@ -151,7 +142,7 @@ const Hero = () => {
                 style={{ backgroundColor: '#1b2b4a', color: 'white' }}
                 onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
               >
-                Get Your Lockbox Now - $30.00
+                Buy Now - $30.00
               </Button>
             </div>
 

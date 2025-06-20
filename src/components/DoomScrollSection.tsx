@@ -1,17 +1,26 @@
 const DoomScrollSection = () => {
   return (
-    <section className="py-20 px-4" style={{ backgroundColor: '#FFFFFF' }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: '#171717' }}>
+    <section 
+      className="pt-12 md:pt-20 pb-8 md:pb-10 px-4 relative" 
+      style={{ 
+        backgroundColor: '#FFFFFF',
+        backgroundImage: 'url(https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Gradient_Top.png?v=1750388699)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-4xl font-bold mb-4 text-white">
             Stop Doom Scrolling, Start Living
           </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#888888' }}>
+          <p className="text-xl max-w-3xl mx-auto text-white">
             Break the cycle of endless scrolling and reclaim your time. See how simple it is to go from distraction to peaceful sleep.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
           {/* Step 1: Doom Scrolling */}
           <div className="text-center">
             <div className="mb-6">
@@ -21,7 +30,7 @@ const DoomScrollSection = () => {
                 className="w-full max-w-xs mx-auto rounded-lg shadow-lg"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 flex justify-center">
               <span className="inline-block w-8 h-8 rounded-full text-white font-bold flex items-center justify-center" style={{ backgroundColor: '#5684C4' }}>
                 1
               </span>
@@ -43,7 +52,7 @@ const DoomScrollSection = () => {
                 className="w-full max-w-xs mx-auto rounded-lg shadow-lg"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 flex justify-center">
               <span className="inline-block w-8 h-8 rounded-full text-white font-bold flex items-center justify-center" style={{ backgroundColor: '#5684C4' }}>
                 2
               </span>
@@ -65,7 +74,7 @@ const DoomScrollSection = () => {
                 className="w-full max-w-xs mx-auto rounded-lg shadow-lg"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 flex justify-center">
               <span className="inline-block w-8 h-8 rounded-full text-white font-bold flex items-center justify-center" style={{ backgroundColor: '#5684C4' }}>
                 3
               </span>
@@ -80,12 +89,12 @@ const DoomScrollSection = () => {
         </div>
 
         {/* Call to action */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 md:mt-12">
           <button 
             className="px-8 py-4 text-lg font-semibold rounded-md border-0 transition-all duration-100 ease-in-out btn-orange"
             onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
           >
-            Break the Cycle Today
+            Buy Now
           </button>
         </div>
       </div>

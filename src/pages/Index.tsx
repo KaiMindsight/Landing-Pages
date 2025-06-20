@@ -6,6 +6,7 @@ import Benefits from "@/components/Benefits";
 import ProductSpecs from "@/components/ProductSpecs";
 import Testimonials from "@/components/Testimonials";
 import DoomScrollSection from "@/components/DoomScrollSection";
+import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
@@ -19,6 +20,7 @@ const Index = () => {
       <ProductSpecs />
       <Testimonials />
       <DoomScrollSection />
+      <Pricing />
       <FAQ />
       <Footer />
     </div>

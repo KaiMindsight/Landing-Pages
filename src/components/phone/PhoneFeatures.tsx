@@ -67,7 +67,7 @@ const PhoneFeatures = () => {
                 className="text-white px-8 py-4 rounded-full font-bold text-lg btn-orange transition-all duration-300 block w-fit"
                 onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
               >
-                ORDER NOW
+                Buy Now
               </button>
             </div>
           </div>

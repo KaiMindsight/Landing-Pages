@@ -37,14 +37,15 @@ const AmbassadorVideos = () => {
         What our Ambassadors are saying
       </h3>
       
-      {/* Natural Space Video Container */}
-      <div 
-        className="flex gap-3 justify-between sm:justify-start sm:gap-4 overflow-x-auto pb-1" 
-        style={{ 
-          scrollbarWidth: 'none', 
-          msOverflowStyle: 'none'
-        }}
-      >
+      {/* Video Container with max-width matching Buy Now button */}
+      <div className="max-w-7xl mx-auto px-4">
+        <div 
+          className="flex gap-3 justify-between sm:justify-start sm:gap-4 overflow-x-auto pb-1" 
+          style={{ 
+            scrollbarWidth: 'none', 
+            msOverflowStyle: 'none'
+          }}
+        >
         {ambassadorVideos.map((video, index) => (
           <div key={video.id} className={`flex-shrink-0 w-24 sm:w-28 md:w-24 ${index >= 3 ? 'hidden sm:block' : ''}`}>
             <div className="relative rounded-lg overflow-hidden bg-white shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
@@ -62,7 +63,7 @@ const AmbassadorVideos = () => {
                   <>
                     {/* Video thumbnail using first frame */}
                     <video
-                      src={video.url}
+                      src={`${video.url}#t=0.1`}
                       className="w-full h-full object-cover"
                       preload="metadata"
                       muted
@@ -84,6 +85,7 @@ const AmbassadorVideos = () => {
             </div>
           </div>
         ))}
+        </div>
       </div>
     </div>
   );

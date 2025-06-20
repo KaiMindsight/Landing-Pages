@@ -47,6 +47,26 @@ const PhoneBenefits = () => {
             <p className="leading-relaxed" style={{ color: '#171717' }}>Timed lock feature puts your phone on pause—so you don't have to rely on self-control.</p>
           </div>
         </div>
+
+        {/* Trust Signals */}
+        <div className="mt-16">
+          <div className="rounded-2xl p-8 text-center text-white" style={{ backgroundColor: '#5684C4' }}>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <div className="text-3xl font-bold mb-2">100k</div>
+                <div className="text-blue-100">Happy Customers</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">30 Day</div>
+                <div className="text-blue-100">Money Back Guarantee</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">Lifetime</div>
+                <div className="text-blue-100">Warranty</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -6,6 +6,7 @@ import ProductComparison from "@/components/product/ProductComparison";
 import ProductTestimonials from "@/components/product/ProductTestimonials";
 import ProductSpecs from "@/components/ProductSpecs";
 import DoomScrollSection from "@/components/DoomScrollSection";
+import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import StickyAddToCart from "@/components/product/StickyAddToCart";
@@ -21,6 +22,7 @@ const ProductPage = () => {
       <ProductComparison />
       <ProductTestimonials />
       <DoomScrollSection />
+      <Pricing />
       <FAQ />
       <Footer />
       <StickyAddToCart />

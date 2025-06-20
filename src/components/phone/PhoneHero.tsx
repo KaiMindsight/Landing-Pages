@@ -7,13 +7,12 @@ const PhoneHero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const productImages = [
-    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Copy_of_1200_5_Star_Reviews_3.png?v=1749704376",
-    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Image_2_Carousel_Lockbox.png?v=1750299592",
-    "https://mindsightnow.com/cdn/shop/files/3_89e33379-0867-4a00-9dd2-f91fd88fd457_720x.jpg?v=1749270876",
-    "https://mindsightnow.com/cdn/shop/files/4_d1e12971-ee23-4d1b-b5c0-0c9e90fd5039_720x.jpg?v=1749270876",
-    "https://mindsightnow.com/cdn/shop/files/5_09d9a3fc-117a-4b72-b666-0e91ccb194c1_720x.jpg?v=1749270876",
-    "https://mindsightnow.com/cdn/shop/files/6_988a0177-e964-4b39-ae07-fcf9ce012882_720x.jpg?v=1749270876",
-    "https://mindsightnow.com/cdn/shop/files/8_b9b0a5e5-1a24-432e-9f21-313c946313dc_720x.jpg?v=1749270876"
+    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_1.png?v=1750391581",
+    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_2.png?v=1750391581",
+    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_3.png?v=1750391581",
+    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_6.png?v=1750391581",
+    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_4.png?v=1750391581",
+    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_7.png?v=1750391581"
   ];
 
   const nextImage = () => {
@@ -29,7 +28,7 @@ const PhoneHero = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Image Gallery */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:sticky lg:top-8">
             {/* Main Image */}
             <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
               <img 
@@ -86,22 +85,29 @@ const PhoneHero = () => {
                 Mindsight Timed Lockbox
               </h1>
               <p className="text-xl mb-4" style={{ color: '#888888' }}>
-                Break free from phone addiction and build healthier digital habits
+                Break free from your phone and build healthier digital habits
               </p>
               
-              {/* Reviews - moved here */}
-              <div 
-                className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => window.open('https://www.amazon.com/product-reviews/B094CDSCGN', '_blank')}
-              >
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+              {/* Star Rating */}
+              <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <span className="text-sm font-medium" style={{ color: '#171717' }}>4.6 out of 5</span>
-                <span className="text-sm" style={{ color: '#888888' }}>(1200+ reviews)</span>
+                <span className="text-lg font-semibold" style={{ color: '#171717' }}>
+                  4.6 out of 5
+                </span>
+                <span className="text-base" style={{ color: '#888888' }}>
+                  (1200+ reviews)
+                </span>
               </div>
+              
+              <p className="text-lg mb-6" style={{ color: '#666666' }}>
+                The Mindsight Timed Lockbox is a simple, science-backed tool that helps you reduce screen time, break bad habits, and stay focused—one locked moment at a time.
+              </p>
+              
+
             </div>
 
             {/* Price */}
@@ -113,22 +119,34 @@ const PhoneHero = () => {
             </div>
 
             {/* Key Features */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#5684C4' }}></div>
-                <span style={{ color: '#171717' }}>3 willpower modes</span>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full text-white text-sm font-bold" style={{ backgroundColor: '#5684C4' }}>1</div>
+                <div>
+                  <div className="font-semibold mb-1" style={{ color: '#171717' }}>Less Scrolling, More Living</div>
+                  <div className="text-sm" style={{ color: '#888888' }}>Take back your time and attention. Step away from the screen and into real life.</div>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#5684C4' }}></div>
-                <span style={{ color: '#171717' }}>Customizable timer</span>
+              <div className="flex items-start gap-3">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full text-white text-sm font-bold" style={{ backgroundColor: '#5684C4' }}>2</div>
+                <div>
+                  <div className="font-semibold mb-1" style={{ color: '#171717' }}>Better Sleep Starts Tonight</div>
+                  <div className="text-sm" style={{ color: '#888888' }}>Create a bedtime routine your brain and body will thank you for.</div>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#5684C4' }}></div>
-                <span style={{ color: '#171717' }}>Holds 4-5 phones</span>
+              <div className="flex items-start gap-3">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full text-white text-sm font-bold" style={{ backgroundColor: '#5684C4' }}>3</div>
+                <div>
+                  <div className="font-semibold mb-1" style={{ color: '#171717' }}>Distraction Is the Default</div>
+                  <div className="text-sm" style={{ color: '#888888' }}>Choose focus instead. Lock your phone and make time for what matters.</div>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#5684C4' }}></div>
-                <span style={{ color: '#171717' }}>Tamper proof design</span>
+              <div className="flex items-start gap-3">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full text-white text-sm font-bold" style={{ backgroundColor: '#5684C4' }}>4</div>
+                <div>
+                  <div className="font-semibold mb-1" style={{ color: '#171717' }}>Break the Habit Loop</div>
+                  <div className="text-sm" style={{ color: '#888888' }}>Out of sight, out of mind. Replace mindless swiping with mindful moments.</div>
+                </div>
               </div>
             </div>
 
@@ -138,7 +156,7 @@ const PhoneHero = () => {
                 className="w-full text-lg py-6 font-semibold btn-orange"
                 onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
               >
-                Mindsight Timed Lockbox - $30.00
+                Buy Now - $30.00
               </Button>
             </div>
 

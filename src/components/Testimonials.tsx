@@ -79,7 +79,7 @@ const Testimonials = () => {
 
   return (
     <section 
-      className="py-20 px-4 relative" 
+      className="py-5 px-4 relative" 
       style={{ 
         backgroundColor: '#F1F1F1',
         backgroundImage: 'url(https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Updated_Background_Seemless_Transition.png?v=1750294683)',
@@ -151,26 +151,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="rounded-2xl p-8 text-center text-white" style={{ backgroundColor: '#5684C4' }}>
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-3xl font-bold mb-2">10,000+</div>
-              <div className="text-blue-100">Happy Customers</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">4.6/5</div>
-              <div className="text-blue-100">Average Rating</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">92%</div>
-              <div className="text-blue-100">Success Rate</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">30 Day</div>
-              <div className="text-blue-100">Money Back Guarantee</div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );

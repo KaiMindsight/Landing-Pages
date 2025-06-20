@@ -2,7 +2,7 @@ import { Check, Shield, HeartHandshake } from "lucide-react";
 
 const Pricing = () => {
   return (
-    <section className="py-20 px-4" style={{ backgroundColor: '#FFFFFF' }}>
+    <section className="pt-10 pb-20 px-4" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4" style={{ color: '#171717' }}>
@@ -54,7 +54,7 @@ const Pricing = () => {
               className="w-full py-4 text-lg font-semibold rounded-md border-0 transition-all duration-100 ease-in-out btn-orange"
               onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
             >
-              Order Now - $30.00
+              Buy Now - $30.00
             </button>
 
             <div className="text-center mt-4 text-sm" style={{ color: '#171717' }}>
