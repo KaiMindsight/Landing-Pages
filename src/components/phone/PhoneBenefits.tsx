@@ -1,4 +1,4 @@
-import { Brain, Focus, Heart, Users, Clock, Shield, Battery } from "lucide-react";
+import { Brain, Focus, Heart, Users, Clock, Shield, Battery, Award } from "lucide-react";
 
 const PhoneBenefits = () => {
   return (
@@ -50,19 +50,34 @@ const PhoneBenefits = () => {
 
         {/* Trust Signals */}
         <div className="mt-16">
-          <div className="rounded-2xl p-8 text-center text-white" style={{ backgroundColor: '#5684C4' }}>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <div className="text-3xl font-bold mb-2">100k</div>
-                <div className="text-blue-100">Happy Customers</div>
+          <div className="flex flex-wrap justify-center gap-6">
+            <div className="bg-white rounded-full px-6 py-3 shadow-lg border-2" style={{ borderColor: '#5684C4' }}>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full" style={{ backgroundColor: '#5684C4' }}>
+                  <Users className="w-4 h-4 text-white" />
+                </div>
+                <div className="text-2xl font-bold" style={{ color: '#5684C4' }}>100k</div>
+                <div className="text-sm font-medium" style={{ color: '#171717' }}>Happy Customers</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">30 Day</div>
-                <div className="text-blue-100">Money Back Guarantee</div>
+            </div>
+            
+            <div className="bg-white rounded-full px-6 py-3 shadow-lg border-2" style={{ borderColor: '#5684C4' }}>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full" style={{ backgroundColor: '#5684C4' }}>
+                  <Shield className="w-4 h-4 text-white" />
+                </div>
+                <div className="text-2xl font-bold" style={{ color: '#5684C4' }}>30 Day</div>
+                <div className="text-sm font-medium" style={{ color: '#171717' }}>Money Back Guarantee</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">Lifetime</div>
-                <div className="text-blue-100">Warranty</div>
+            </div>
+            
+            <div className="bg-white rounded-full px-6 py-3 shadow-lg border-2" style={{ borderColor: '#5684C4' }}>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full" style={{ backgroundColor: '#5684C4' }}>
+                  <Award className="w-4 h-4 text-white" />
+                </div>
+                <div className="text-2xl font-bold" style={{ color: '#5684C4' }}>Lifetime</div>
+                <div className="text-sm font-medium" style={{ color: '#171717' }}>Warranty</div>
               </div>
             </div>
           </div>

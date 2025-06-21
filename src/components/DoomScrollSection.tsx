@@ -3,11 +3,7 @@ const DoomScrollSection = () => {
     <section 
       className="pt-12 md:pt-20 pb-8 md:pb-10 px-4 relative" 
       style={{ 
-        backgroundColor: '#FFFFFF',
-        backgroundImage: 'url(https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Gradient_Top.png?v=1750388699)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        background: `linear-gradient(to bottom, #3e6daf 0%, #3e6daf 15%, #FFFFFF 100%)`
       }}
     >
       <div className="max-w-7xl mx-auto relative z-10">
@@ -25,7 +21,7 @@ const DoomScrollSection = () => {
           <div className="text-center">
             <div className="mb-6">
               <img 
-                src="https://cdn.shopify.com/s/files/1/0562/5505/3986/files/1.gif?v=1750300573" 
+                src="https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Sleeping_Gif_1_-_Lighter.gif?v=1750457092" 
                 alt="Person doom scrolling on phone"
                 className="w-full max-w-xs mx-auto rounded-lg shadow-lg"
               />
@@ -47,7 +43,7 @@ const DoomScrollSection = () => {
           <div className="text-center">
             <div className="mb-6">
               <img 
-                src="https://cdn.shopify.com/s/files/1/0562/5505/3986/files/2.gif?v=1750300574" 
+                src="https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Sleeping_Gif_2_-_Lighter.gif?v=1750457093" 
                 alt="Locking phone in Mindsight lockbox"
                 className="w-full max-w-xs mx-auto rounded-lg shadow-lg"
               />
@@ -69,7 +65,7 @@ const DoomScrollSection = () => {
           <div className="text-center">
             <div className="mb-6">
               <img 
-                src="https://cdn.shopify.com/s/files/1/0562/5505/3986/files/3.gif?v=1750300572" 
+                src="https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Sleeping_Gif_3_-_Lighter.gif?v=1750457090" 
                 alt="Person going to sleep peacefully"
                 className="w-full max-w-xs mx-auto rounded-lg shadow-lg"
               />
@@ -86,16 +82,6 @@ const DoomScrollSection = () => {
               Enjoy quality rest without the blue light and stimulation. Wake up refreshed and ready for a productive day.
             </p>
           </div>
-        </div>
-
-        {/* Call to action */}
-        <div className="text-center mt-8 md:mt-12">
-          <button 
-            className="px-8 py-4 text-lg font-semibold rounded-md border-0 transition-all duration-100 ease-in-out btn-orange"
-            onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
-          >
-            Buy Now
-          </button>
         </div>
       </div>
     </section>

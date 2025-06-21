@@ -1,13 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { Star, Shield, Award, ChevronLeft, ChevronRight, Truck, RotateCcw, Phone } from "lucide-react";
+import { Star, Shield, Award, ChevronLeft, ChevronRight, Truck, RotateCcw, Phone, Check } from "lucide-react";
 import { useState } from "react";
 import AmbassadorVideos from "@/components/AmbassadorVideos";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const PhoneHero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
   const productImages = [
-    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_1_Updated.png?v=1750392759",
+    "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_1_Updated_2.jpg?v=1750452524",
     "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_2.png?v=1750391581",
     "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_3.png?v=1750391581",
     "https://cdn.shopify.com/s/files/1/0562/5505/3986/files/LB_6.png?v=1750391581",
@@ -102,21 +108,20 @@ const PhoneHero = () => {
                   (1200+ reviews)
                 </span>
               </div>
-              
-              <p className="text-lg mb-6" style={{ color: '#666666' }}>
-                The Mindsight Timed Lockbox is a simple, science-backed tool that helps you reduce screen time, break bad habits, and stay focused—one locked moment at a time.
-              </p>
-              
-
             </div>
 
-            {/* Price */}
+            {/* Price - Moved above description */}
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <span className="text-3xl font-bold" style={{ color: '#171717' }}>$30.00</span>
                 <span className="text-xl text-gray-400 line-through">$40.00</span>
               </div>
             </div>
+            
+            {/* Product Description */}
+            <p className="text-lg mb-6" style={{ color: '#666666' }}>
+              The Mindsight Timed Lockbox is a simple, science-backed tool that helps you reduce screen time, break bad habits, and stay focused—one locked moment at a time.
+            </p>
 
             {/* Key Features */}
             <div className="space-y-4">
@@ -158,6 +163,60 @@ const PhoneHero = () => {
               >
                 Buy Now - $30.00
               </Button>
+              
+              {/* 30-Day Money Back Guarantee */}
+              <div className="flex items-center justify-center gap-2 text-sm" style={{ color: '#666666' }}>
+                <div className="flex items-center justify-center w-5 h-5 rounded-full" style={{ backgroundColor: '#5684C4' }}>
+                  <Check className="w-3 h-3 text-white" />
+                </div>
+                <span>30-day money back guarantee</span>
+              </div>
+            </div>
+
+            {/* FAQ Accordion */}
+            <div className="space-y-4">
+              <Accordion type="single" collapsible defaultValue="features" className="w-full">
+                <AccordionItem value="features">
+                  <AccordionTrigger className="text-left">Features and Benefits</AccordionTrigger>
+                  <AccordionContent>
+                    The Mindsight Timed Lockbox features a secure timed lockbox that prevents access for set periods, helping you build healthy digital boundaries. Its compact design fits 3/4 smartphones while the durable construction ensures long-lasting use for breaking phone addiction habits.
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="fits">
+                  <AccordionTrigger className="text-left">What Fits in The Lockbox?</AccordionTrigger>
+                  <AccordionContent>
+                    The lockbox can hold up to 3-4 phones, 1-2 gaming controllers, snacks, medication bottles, credit cards and cash, or vapes and cigarettes. Its spacious interior accommodates various items you want to keep away during focus time or habit-breaking sessions.
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="charging">
+                  <AccordionTrigger className="text-left">Can I charge my phone while it's locked inside?</AccordionTrigger>
+                  <AccordionContent>
+                    Yes, you can charge your phone while it's locked inside through the two charging holes at the bottom of the lockbox. This allows you to maintain your device's battery while staying disconnected from distracting apps and notifications.
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="modes">
+                  <AccordionTrigger className="text-left">What's the difference between the three modes?</AccordionTrigger>
+                  <AccordionContent>
+                    <div className="space-y-2">
+                      <ul className="space-y-1 ml-4">
+                        <li>• <strong>Lockbox</strong> – No timed countdown</li>
+                        <li>• <strong>Standard</strong> – Timed countdown & override code</li>
+                        <li>• <strong>Fortress</strong> – No override once locked</li>
+                      </ul>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="emergency">
+                  <AccordionTrigger className="text-left">Can I still access it in case of an emergency?</AccordionTrigger>
+                  <AccordionContent>
+                    In Lockbox and Standard mode, your items are always accessible when needed. In Fortress Mode, you can only access your items with a special code from our support staff, ensuring maximum commitment to your focus or habit-breaking goals.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
 
             {/* Ambassador Videos */}

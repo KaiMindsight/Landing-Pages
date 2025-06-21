@@ -14,51 +14,63 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="max-w-md mx-auto">
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border-2 relative" style={{ borderColor: '#5684C4' }}>
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="px-4 py-2 rounded-full text-sm font-semibold" style={{ backgroundColor: '#5684C4', color: '#FFFFFF' }}>
-                BEST VALUE
-              </span>
-            </div>
-            
-            <div className="text-center mb-8">
-              <div className="flex items-center justify-center gap-3 mb-2">
-                <span className="text-2xl text-gray-400 line-through">$40.00</span>
-                <span className="text-5xl font-bold" style={{ color: '#171717' }}>$30.00</span>
-              </div>
-              <div style={{ color: '#171717' }}>One-time purchase</div>
-            </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left side - Image */}
+          <div className="flex justify-center lg:justify-end">
+            <img 
+              src="https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Lockbox_Work_Image.png?v=1750456585"
+              alt="Person using Mindsight lockbox while working"
+              className="w-full max-w-md rounded-lg shadow-lg"
+            />
+          </div>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-3">
-                <Check style={{ color: '#5684C4' }} size={20} />
-                <span style={{ color: '#171717' }}>Mindsight Timed Lockbox</span>
+          {/* Right side - Pricing card */}
+          <div className="flex justify-center lg:justify-start">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border-2 relative w-full max-w-md" style={{ borderColor: '#5684C4' }}>
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="px-4 py-2 rounded-full text-sm font-semibold" style={{ backgroundColor: '#5684C4', color: '#FFFFFF' }}>
+                  BEST VALUE
+                </span>
               </div>
-              <div className="flex items-center gap-3">
-                <Check style={{ color: '#5684C4' }} size={20} />
-                <span style={{ color: '#171717' }}>Three willpower modes</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check style={{ color: '#5684C4' }} size={20} />
-                <span style={{ color: '#171717' }}>2× AA batteries included</span>
+              
+              <div className="text-center mb-8">
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <span className="text-2xl text-gray-400 line-through">$40.00</span>
+                  <span className="text-5xl font-bold" style={{ color: '#171717' }}>$30.00</span>
+                </div>
+                <div style={{ color: '#171717' }}>One-time purchase</div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Check style={{ color: '#5684C4' }} size={20} />
-                <span style={{ color: '#171717' }}>Quick start guide & support</span>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <Check style={{ color: '#5684C4' }} size={20} />
+                  <span style={{ color: '#171717' }}>Mindsight Timed Lockbox</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check style={{ color: '#5684C4' }} size={20} />
+                  <span style={{ color: '#171717' }}>Three willpower modes</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check style={{ color: '#5684C4' }} size={20} />
+                  <span style={{ color: '#171717' }}>2× AA batteries included</span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Check style={{ color: '#5684C4' }} size={20} />
+                  <span style={{ color: '#171717' }}>Quick start guide & support</span>
+                </div>
               </div>
-            </div>
 
-            <button 
-              className="w-full py-4 text-lg font-semibold rounded-md border-0 transition-all duration-100 ease-in-out btn-orange"
-              onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
-            >
-              Buy Now - $30.00
-            </button>
+              <button 
+                className="w-full py-4 text-lg font-semibold rounded-md border-0 transition-all duration-100 ease-in-out btn-orange"
+                onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
+              >
+                Buy Now - $30.00
+              </button>
 
-            <div className="text-center mt-4 text-sm" style={{ color: '#171717' }}>
-              30 Day Money Back Guarantee • Lifetime Warranty • Free shipping over $75
+              <div className="text-center mt-4 text-sm" style={{ color: '#171717' }}>
+                30 Day Money Back Guarantee • Lifetime Warranty • Free shipping over $75
+              </div>
             </div>
           </div>
         </div>
