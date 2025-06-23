@@ -8,10 +8,13 @@ const Pricing = () => {
           <h2 className="text-4xl font-bold mb-4" style={{ color: '#171717' }}>
             Start Building Better Habits Today
           </h2>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#888888' }}>
+          <p className="text-xl max-w-3xl mx-auto mb-4" style={{ color: '#888888' }}>
             Invest in your focus, productivity, and well-being. Join thousands of people 
             who have already transformed their habits with the Mindsight Timed Lockbox.
           </p>
+          <div className="flex justify-center">
+            <span className="bg-red-500 text-white px-4 py-2 rounded-full text-lg font-bold">25% OFF</span>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
