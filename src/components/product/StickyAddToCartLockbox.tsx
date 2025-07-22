@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const StickyAddToCart = () => {
+const StickyAddToCartLockbox = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -36,28 +36,28 @@ const StickyAddToCart = () => {
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 rounded-lg flex items-center justify-center bg-white p-2">
               <img 
-                src="https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Front_720x.jpg?v=1749004376" 
-                alt="Mindsight Kinetic Wall Art"
+                src="https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Timed_Lockbox_W_Shadow.png?v=1741265966" 
+                alt="Mindsight Timed Lockbox"
                 className="w-full h-full object-contain"
               />
             </div>
             <div>
-              <h3 className="font-bold" style={{ color: '#171717' }}>Mindsight Kinetic Wall Art</h3>
-              <p className="text-sm" style={{ color: '#888888' }}>Handcrafted mindfulness for your space</p>
+              <h3 className="font-bold" style={{ color: '#171717' }}>Mindsight Timed Lockbox</h3>
+              <p className="text-sm" style={{ color: '#888888' }}>Break free from distractions and build better habits</p>
             </div>
           </div>
           
-                      <div className="flex items-center gap-4">
-              <div className="text-right">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg text-gray-400 line-through">$450.00</span>
-                  <span className="text-2xl font-bold" style={{ color: '#171717' }}>$370.00</span>
-                  <span className="text-sm bg-red-500 text-white px-2 py-1 rounded">SAVE $80</span>
-                </div>
+          <div className="flex items-center gap-4">
+            <div className="text-right">
+              <div className="flex items-center gap-2">
+                <span className="text-lg text-gray-400 line-through">$40.00</span>
+                <span className="text-2xl font-bold" style={{ color: '#171717' }}>$30.00</span>
+                <span className="text-sm bg-red-500 text-white px-2 py-1 rounded">SAVE $10</span>
               </div>
+            </div>
             <Button 
               className="text-lg px-8 py-6 font-semibold btn-orange"
-              onClick={() => window.open('https://mindsightnow.com/products/kinetic-wall-art', '_blank')}
+              onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
             >
               Buy Now
             </Button>
@@ -70,23 +70,23 @@ const StickyAddToCart = () => {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-white p-1">
                 <img 
-                  src="https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Front_720x.jpg?v=1749004376" 
-                  alt="Mindsight Kinetic Wall Art"
+                  src="https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Timed_Lockbox_W_Shadow.png?v=1741265966" 
+                  alt="Mindsight Timed Lockbox"
                   className="w-full h-full object-contain"
                 />
               </div>
               <div>
-                <h3 className="font-bold text-sm" style={{ color: '#171717' }}>Kinetic Wall Art</h3>
+                <h3 className="font-bold text-sm" style={{ color: '#171717' }}>Timed Lockbox</h3>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-gray-400 line-through">$450.00</span>
-                  <span className="text-lg font-bold" style={{ color: '#171717' }}>$370.00</span>
+                  <span className="text-sm text-gray-400 line-through">$40.00</span>
+                  <span className="text-lg font-bold" style={{ color: '#171717' }}>$30.00</span>
                 </div>
               </div>
             </div>
             
             <Button 
               className="text-sm px-4 py-3 font-semibold whitespace-nowrap btn-orange"
-              onClick={() => window.open('https://mindsightnow.com/products/kinetic-wall-art', '_blank')}
+              onClick={() => window.open('https://mindsightnow.com/cart/43571017711778:1?discount=LOCKIT25', '_blank')}
             >
               Buy Now
             </Button>
@@ -97,4 +97,4 @@ const StickyAddToCart = () => {
   );
 };
 
-export default StickyAddToCart;
+export default StickyAddToCartLockbox;

@@ -9,7 +9,7 @@ import DoomScrollSection from "@/components/DoomScrollSection";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
-import StickyAddToCart from "@/components/product/StickyAddToCart";
+import StickyAddToCartLockbox from "@/components/product/StickyAddToCartLockbox";
 
 const PhonePage = () => {
   return (
@@ -25,7 +25,7 @@ const PhonePage = () => {
       <Pricing />
       <FAQ />
       <Footer />
-      <StickyAddToCart />
+      <StickyAddToCartLockbox />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { Star, ThumbsUp, ThumbsDown } from "lucide-react";
 import { useState } from "react";
 
-const Testimonials = () => {
+const AddictionTestimonials = () => {
   const [votes, setVotes] = useState({
     0: { likes: 87, dislikes: 13, userVote: null },
     1: { likes: 58, dislikes: 4, userVote: null },
@@ -48,31 +48,31 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Elena",
+      name: "Michael",
       role: "Verified Purchase",
       rating: 5,
-      text: "This lockbox is perfect for storing our teen's phone during school. He can access it after school without waiting for us, but stays focused during the day. It's been a game-changer for our family!",
+      text: "This lockbox has been a game-changer for my recovery. Being able to lock away my triggers during vulnerable moments has helped me stay on track. It's simple but incredibly effective.",
       image: "https://m.media-amazon.com/images/I/618RwqoHf+L.jpg"
     },
     {
-      name: "Lema",
+      name: "Jessica",
       role: "Verified Purchase", 
       rating: 5,
-      text: "Sturdy build with excellent battery life. I use it to lock away my phone and gaming controllers to avoid distractions. Been using it for a year and haven't replaced the battery once. Highly recommend!",
+      text: "After struggling with my addiction for years, this lockbox has given me the extra support I needed. The timed lock feature means I can't access my triggers during moments of weakness. Highly recommend!",
       image: "https://m.media-amazon.com/images/I/71rePV-hpxL.jpg"
     },
     {
-      name: "Rick",
+      name: "David",
       role: "Verified Purchase",
       rating: 5,
-      text: "Despite initial confusion with battery placement, this arrived quickly and proved very user-friendly. Works perfectly and I recommend it to anyone struggling with personal habits. Great investment!",
+      text: "I was skeptical at first, but this has been an essential tool in my recovery journey. Being able to physically lock away temptations has made a huge difference in my ability to maintain sobriety.",
       image: "https://m.media-amazon.com/images/I/61H6Sr-6oTL.jpg"
     },
     {
-      name: "Sarah",
+      name: "Rachel",
       role: "Verified Purchase",
       rating: 5,
-      text: "Well-constructed and easy to use. I accidentally locked myself out in fortress mode longer than intended, but support provided an emergency code promptly. Much better than expensive competitors!",
+      text: "My therapist recommended this as part of my recovery plan, and it's been incredibly helpful. The physical barrier helps me pause and think before giving in to cravings. Worth every penny!",
       image: "https://m.media-amazon.com/images/I/714ffUt6cvL.jpg"
     }
   ];
@@ -94,7 +94,7 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4" style={{ color: '#171717' }}>
-            Real Stories. Real Results.
+            Recovery Stories. Real Results.
           </h2>
         </div>
 
@@ -157,4 +157,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default AddictionTestimonials;

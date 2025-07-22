@@ -10,6 +10,9 @@ import SmokingPage from "./pages/SmokingPage";
 import SleepPage from "./pages/SleepPage";
 import ParentingPage from "./pages/ParentingPage";
 import ProductPage from "./pages/ProductPage";
+import AddictionPage from "./pages/AddictionPage";
+import KineticWallArtPage from "./pages/KineticWallArtPage";
+import KineticWallArtPage2 from "./pages/KineticWallArtPage2";
 import NotFound from "./pages/NotFound";
 import TermsConditions from "./components/TermsConditions";
 import ReturnPolicy from "./components/ReturnPolicy";
@@ -30,6 +33,9 @@ const App = () => (
           <Route path="/sleep" element={<SleepPage />} />
           <Route path="/parenting" element={<ParentingPage />} />
           <Route path="/product" element={<ProductPage />} />
+          <Route path="/addiction" element={<AddictionPage />} />
+          <Route path="/kinetic-wall-art" element={<KineticWallArtPage />} />
+          <Route path="/kinetic-wall-art-2" element={<KineticWallArtPage2 />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/refund-policy" element={<ReturnPolicy />} />

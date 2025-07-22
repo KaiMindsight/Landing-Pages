@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const StickyAddToCart = () => {
+const StickyAddToCartWallArt = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -47,14 +47,14 @@ const StickyAddToCart = () => {
             </div>
           </div>
           
-                      <div className="flex items-center gap-4">
-              <div className="text-right">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg text-gray-400 line-through">$450.00</span>
-                  <span className="text-2xl font-bold" style={{ color: '#171717' }}>$370.00</span>
-                  <span className="text-sm bg-red-500 text-white px-2 py-1 rounded">SAVE $80</span>
-                </div>
+          <div className="flex items-center gap-4">
+            <div className="text-right">
+              <div className="flex items-center gap-2">
+                <span className="text-lg text-gray-400 line-through">$450.00</span>
+                <span className="text-2xl font-bold" style={{ color: '#171717' }}>$370.00</span>
+                <span className="text-sm bg-red-500 text-white px-2 py-1 rounded">SAVE $80</span>
               </div>
+            </div>
             <Button 
               className="text-lg px-8 py-6 font-semibold btn-orange"
               onClick={() => window.open('https://mindsightnow.com/products/kinetic-wall-art', '_blank')}
@@ -97,4 +97,4 @@ const StickyAddToCart = () => {
   );
 };
 
-export default StickyAddToCart;
+export default StickyAddToCartWallArt;

@@ -1,15 +1,15 @@
 import React from "react";
 import { Check, X } from "lucide-react";
 
-const ProductComparison = () => {
+const AddictionComparison = () => {
   const keyComparisons = [
-    { feature: "Price", us: "$30", them: "$69", advantage: true },
-    { feature: "Phone Compatibility", us: "3-4 phones", them: "3-4 phones", advantage: true },
+    { feature: "Price", us: "$30", them: "$150+", advantage: true },
+    { feature: "Recovery Support", us: "Built-in modes", them: "Basic only", advantage: true },
     { feature: "Lock Duration", us: "1min - 30 days", them: "1min - 10 days", advantage: true },
     { feature: "Emergency Access", us: "Yes", them: "No", advantage: true },
-    { feature: "Charge While Locked", us: "Yes", them: "No", advantage: true },
+    { feature: "Multiple Triggers", us: "Yes", them: "Limited", advantage: true },
     { feature: "Batteries Included", us: "Yes", them: "No", advantage: true },
-    { feature: "Multiple Willpower Modes", us: "Yes", them: "No", advantage: true },
+    { feature: "Recovery Guidance", us: "Included", them: "Sold separately", advantage: true },
   ];
 
   return (
@@ -25,8 +25,11 @@ const ProductComparison = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#171717' }}>
-            How We Stack Up
+            Why Choose Mindsight for Recovery
           </h2>
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: '#666666' }}>
+            Compare our addiction recovery solution with expensive alternatives
+          </p>
         </div>
 
         {/* Main Comparison */}
@@ -38,10 +41,11 @@ const ProductComparison = () => {
               <div className="w-40 h-40 mx-auto mb-4 flex items-center justify-center p-4">
                 <img 
                   src="https://cdn.shopify.com/s/files/1/0562/5505/3986/files/Untitled_design_16_36b53ba3-8b23-406d-94fa-7516d5d6da28.png?v=1749673981" 
-                  alt="Competitor Product"
+                  alt="Expensive Recovery Tools"
                   className="w-full h-full object-contain opacity-80"
                 />
               </div>
+              <p className="text-sm font-medium" style={{ color: '#666666' }}>Expensive Recovery Tools</p>
             </div>
 
             {/* Center Comparison Table */}
@@ -49,7 +53,7 @@ const ProductComparison = () => {
               <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden mx-auto max-w-4xl">
                 <div className="grid grid-cols-3">
                   <div className="px-6 py-4 bg-gray-50 font-bold text-gray-700 text-center border-b-2 border-gray-200 text-lg">Feature</div>
-                  <div className="px-6 py-4 bg-gray-100 font-bold text-gray-600 text-center border-b-2 border-gray-200 text-lg">Competitor</div>
+                  <div className="px-6 py-4 bg-gray-100 font-bold text-gray-600 text-center border-b-2 border-gray-200 text-lg">Others</div>
                   <div className="px-6 py-4 font-bold text-center border-b-2 text-lg" style={{ backgroundColor: '#fff5f2', color: '#ff6b35', borderColor: '#ff6b35' }}>Mindsight</div>
                   
                   {keyComparisons.map((item, index) => [
@@ -82,12 +86,15 @@ const ProductComparison = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
+              <p className="text-sm font-medium" style={{ color: '#ff6b35' }}>Mindsight Recovery Solution</p>
             </div>
           </div>
         </div>
+
+
       </div>
     </section>
   );
 };
 
-export default ProductComparison;
+export default AddictionComparison;
