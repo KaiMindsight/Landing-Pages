@@ -1,6 +1,35 @@
 import { Check, X } from "lucide-react";
 
-const ProductComparison = () => {
+interface ProductComparisonProps {
+  selectedVariant?: string;
+  selectedColor?: string;
+}
+
+const ProductComparison: React.FC<ProductComparisonProps> = ({ selectedVariant = 'ripple', selectedColor = 'brown' }) => {
+  // Checkout URLs mapping
+  const checkoutUrls = {
+    bloom: {
+      brown: 'https://mindsightnow.com/cart/45547855806626:1',
+      gray: 'https://mindsightnow.com/cart/45547855773858:1'
+    },
+    wander: {
+      brown: 'https://mindsightnow.com/cart/45547855872162:1',
+      gray: 'https://mindsightnow.com/cart/45547855904930:1'
+    },
+    glide: {
+      brown: 'https://mindsightnow.com/cart/45547855970466:1',
+      gray: 'https://mindsightnow.com/cart/45547856003234:1'
+    },
+    ripple: {
+      brown: 'https://mindsightnow.com/cart/45547856134306:1',
+      gray: 'https://mindsightnow.com/cart/45547856101538:1'
+    }
+  };
+
+  // Get current checkout URL
+  const getCurrentCheckoutUrl = () => {
+    return checkoutUrls[selectedVariant]?.[selectedColor] || 'https://mindsightnow.com/products/kinetic-wall-art';
+  };
   return (
     <section className="py-20 px-4" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="max-w-7xl mx-auto">
@@ -215,8 +244,9 @@ const ProductComparison = () => {
           <button 
             className="px-8 py-3 rounded-full font-semibold text-white transition-all duration-300"
             style={{ backgroundColor: '#563232' }}
+            onClick={() => window.open(getCurrentCheckoutUrl(), '_blank')}
           >
-            Get Your Kinetic Wall Art Today
+            Buy Now
           </button>
         </div>
       </div>

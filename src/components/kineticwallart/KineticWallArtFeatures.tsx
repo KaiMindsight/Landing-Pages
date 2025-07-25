@@ -1,6 +1,35 @@
 import { Clock, Shield, Battery, Brain, Heart, Target } from "lucide-react";
 
-const KineticWallArtFeatures = () => {
+interface KineticWallArtFeaturesProps {
+  selectedVariant?: string;
+  selectedColor?: string;
+}
+
+const KineticWallArtFeatures: React.FC<KineticWallArtFeaturesProps> = ({ selectedVariant = 'ripple', selectedColor = 'brown' }) => {
+  // Checkout URLs mapping
+  const checkoutUrls = {
+    bloom: {
+      brown: 'https://mindsightnow.com/cart/45547855806626:1',
+      gray: 'https://mindsightnow.com/cart/45547855773858:1'
+    },
+    wander: {
+      brown: 'https://mindsightnow.com/cart/45547855872162:1',
+      gray: 'https://mindsightnow.com/cart/45547855904930:1'
+    },
+    glide: {
+      brown: 'https://mindsightnow.com/cart/45547855970466:1',
+      gray: 'https://mindsightnow.com/cart/45547856003234:1'
+    },
+    ripple: {
+      brown: 'https://mindsightnow.com/cart/45547856134306:1',
+      gray: 'https://mindsightnow.com/cart/45547856101538:1'
+    }
+  };
+
+  // Get current checkout URL
+  const getCurrentCheckoutUrl = () => {
+    return checkoutUrls[selectedVariant]?.[selectedColor] || 'https://mindsightnow.com/products/kinetic-wall-art';
+  };
   return (
     <section 
       className="py-20 px-4 relative" 
@@ -65,7 +94,7 @@ const KineticWallArtFeatures = () => {
             <div className="space-y-4">
               <button 
                 className="text-white px-8 py-4 rounded-full font-bold text-lg btn-orange transition-all duration-300 block w-fit"
-                onClick={() => window.open('https://mindsightnow.com/products/kinetic-wall-art', '_blank')}
+                onClick={() => window.open(getCurrentCheckoutUrl(), '_blank')}
               >
                 Buy Now
               </button>

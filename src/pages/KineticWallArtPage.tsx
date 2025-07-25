@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CountdownBar from "@/components/CountdownBar";
 import KineticWallArtHero from "@/components/kineticwallart/KineticWallArtHero";
 import KineticWallArtFeatures from "@/components/kineticwallart/KineticWallArtFeatures";
@@ -11,19 +12,27 @@ import StickyAddToCartWallArt from "@/components/product/StickyAddToCartWallArt"
 import ProductSpecs from "@/components/kineticwallart/ProductSpecs";
 
 const KineticWallArtPage = () => {
+  const [selectedVariant, setSelectedVariant] = useState('ripple');
+  const [selectedColor, setSelectedColor] = useState('brown');
+
   return (
     <div className="min-h-screen">
-      <CountdownBar />
-      <KineticWallArtHero />
-      <KineticWallArtFeatures />
+      <CountdownBar showFreeShipping={true} />
+      <KineticWallArtHero 
+        selectedVariant={selectedVariant}
+        setSelectedVariant={setSelectedVariant}
+        selectedColor={selectedColor}
+        setSelectedColor={setSelectedColor}
+      />
+      <KineticWallArtFeatures selectedVariant={selectedVariant} selectedColor={selectedColor} />
       <KineticWallArtBenefits />
       <KineticWallArtTestimonials />
-      <ProductComparison />
+      <ProductComparison selectedVariant={selectedVariant} selectedColor={selectedColor} />
       <ProductSpecs />
-      <KineticWallArtPricing />
+      <KineticWallArtPricing selectedVariant={selectedVariant} selectedColor={selectedColor} />
       <KineticWallArtFAQ />
       <Footer />
-      <StickyAddToCartWallArt />
+      <StickyAddToCartWallArt selectedVariant={selectedVariant} selectedColor={selectedColor} />
     </div>
   );
 };

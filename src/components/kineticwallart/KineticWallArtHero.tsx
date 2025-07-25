@@ -9,10 +9,29 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const KineticWallArtHero = () => {
+const KineticWallArtHero = ({ selectedVariant, setSelectedVariant, selectedColor, setSelectedColor }) => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [selectedVariant, setSelectedVariant] = useState('ripple');
   
+  // Checkout URLs mapping
+  const checkoutUrls = {
+    bloom: {
+      brown: 'https://mindsightnow.com/cart/45547855806626:1',
+      gray: 'https://mindsightnow.com/cart/45547855773858:1'
+    },
+    wander: {
+      brown: 'https://mindsightnow.com/cart/45547855872162:1',
+      gray: 'https://mindsightnow.com/cart/45547855904930:1'
+    },
+    glide: {
+      brown: 'https://mindsightnow.com/cart/45547855970466:1',
+      gray: 'https://mindsightnow.com/cart/45547856003234:1'
+    },
+    ripple: {
+      brown: 'https://mindsightnow.com/cart/45547856134306:1',
+      gray: 'https://mindsightnow.com/cart/45547856101538:1'
+    }
+  };
+
   const productImages = {
     ripple: {
       brown: [
@@ -59,14 +78,8 @@ const KineticWallArtHero = () => {
 
   const getCurrentImages = () => {
     const variantImages = [];
-    if (productImages[selectedVariant]) {
-      Object.values(productImages[selectedVariant]).forEach(colorImages => {
-        if (Array.isArray(colorImages)) {
-          variantImages.push(...colorImages);
-        } else {
-          variantImages.push(colorImages);
-        }
-      });
+    if (productImages[selectedVariant] && productImages[selectedVariant][selectedColor]) {
+      variantImages.push(...productImages[selectedVariant][selectedColor]);
     }
     
     // Add informational images
@@ -78,6 +91,11 @@ const KineticWallArtHero = () => {
     );
     
     return variantImages;
+  };
+
+  // Get current checkout URL
+  const getCurrentCheckoutUrl = () => {
+    return checkoutUrls[selectedVariant]?.[selectedColor] || 'https://mindsightnow.com/products/kinetic-wall-art';
   };
 
   const currentImages = getCurrentImages();
@@ -147,6 +165,8 @@ const KineticWallArtHero = () => {
                 {currentImage + 1} / {currentImages.length}
               </div>
             </div>
+
+
             
             {/* Thumbnail Gallery */}
             <div className="grid grid-cols-4 gap-2">
@@ -255,6 +275,27 @@ const KineticWallArtHero = () => {
               </div>
             </div>
 
+            {/* Color Selection */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold" style={{ color: '#171717' }}>Select Color</h3>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setSelectedColor('brown')}
+                  className={`flex-1 p-4 rounded-lg border-2 transition-all text-center ${selectedColor === 'brown' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-gray-300'}`}
+                >
+                  <div className="w-8 h-8 rounded-full mx-auto mb-2" style={{ backgroundColor: '#8B4513' }}></div>
+                  <div className="font-medium" style={{ color: '#171717' }}>Brown</div>
+                </button>
+                <button
+                  onClick={() => setSelectedColor('gray')}
+                  className={`flex-1 p-4 rounded-lg border-2 transition-all text-center ${selectedColor === 'gray' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-gray-300'}`}
+                >
+                  <div className="w-8 h-8 rounded-full mx-auto mb-2" style={{ backgroundColor: '#808080' }}></div>
+                  <div className="font-medium" style={{ color: '#171717' }}>Gray</div>
+                </button>
+              </div>
+            </div>
+
             {/* Key Features */}
             <div className="space-y-6">
               
@@ -285,7 +326,7 @@ const KineticWallArtHero = () => {
             <div className="space-y-4">
               <Button 
                 className="w-full text-lg py-6 font-semibold btn-orange"
-                onClick={() => window.open('https://mindsightnow.com/products/kinetic-wall-art', '_blank')}
+                onClick={() => window.open(getCurrentCheckoutUrl(), '_blank')}
               >
                 Buy Now - $370.00
               </Button>

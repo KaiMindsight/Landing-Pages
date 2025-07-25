@@ -9,28 +9,70 @@ import {
 } from '@/components/ui/accordion';
 import KineticWallArtAmbassadorVideos from './KineticWallArtAmbassadorVideos';
 
-const KineticWallArtHero2 = () => {
+interface KineticWallArtHero2Props {
+  selectedVariant: string;
+  setSelectedVariant: (variant: string) => void;
+  selectedColor: string;
+  setSelectedColor: (color: string) => void;
+}
+
+const KineticWallArtHero2: React.FC<KineticWallArtHero2Props> = ({ selectedVariant, setSelectedVariant, selectedColor, setSelectedColor }) => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [selectedVariant, setSelectedVariant] = useState('ripple');
+
+  // Checkout URLs mapping
+  const checkoutUrls = {
+    bloom: {
+      brown: 'https://mindsightnow.com/cart/45547855806626:1',
+      gray: 'https://mindsightnow.com/cart/45547855773858:1'
+    },
+    wander: {
+      brown: 'https://mindsightnow.com/cart/45547855872162:1',
+      gray: 'https://mindsightnow.com/cart/45547855904930:1'
+    },
+    glide: {
+      brown: 'https://mindsightnow.com/cart/45547855970466:1',
+      gray: 'https://mindsightnow.com/cart/45547856003234:1'
+    },
+    ripple: {
+      brown: 'https://mindsightnow.com/cart/45547856134306:1',
+      gray: 'https://mindsightnow.com/cart/45547856101538:1'
+    }
+  };
 
   // Product images organized by variant
   const productImages = {
     ripple: {
-      brown: 'https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Front_720x.jpg?v=1749004376',
-      gray: 'https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Variant_Gray_720x.jpg?v=1749004376'
+      brown: [
+        'https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Front_720x.jpg?v=1749004376'
+      ],
+      gray: [
+        'https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Variant_Gray_720x.jpg?v=1749004376'
+      ]
     },
     bloom: {
-      brown: 'https://mindsightnow.com/cdn/shop/files/WB_-_bloom_brown_720x.jpg?v=1748883454',
-      gray: 'https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Variant_Bloom_Gray_720x.jpg?v=1749004376',
-      custom: 'https://mindsightnow.com/cdn/shop/files/Collage_720x.png?v=1751640287'
+      brown: [
+        'https://mindsightnow.com/cdn/shop/files/WB_-_bloom_brown_720x.jpg?v=1748883454'
+      ],
+      gray: [
+        'https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Variant_Bloom_Gray_720x.jpg?v=1749004376',
+        'https://mindsightnow.com/cdn/shop/files/Collage_720x.png?v=1751640287'
+      ]
     },
     wander: {
-      brown: 'https://mindsightnow.com/cdn/shop/files/Wander_Brown_e9e9a763-c38b-4c1b-a66a-75de6f2d83fd_720x.png?v=1752591704',
-      gray: 'https://mindsightnow.com/cdn/shop/files/Wander_Gray_385baf0a-9613-4b72-9051-161f1c1d2767_720x.png?v=1752591690'
+      brown: [
+        'https://mindsightnow.com/cdn/shop/files/Wander_Brown_e9e9a763-c38b-4c1b-a66a-75de6f2d83fd_720x.png?v=1752591704'
+      ],
+      gray: [
+        'https://mindsightnow.com/cdn/shop/files/Wander_Gray_385baf0a-9613-4b72-9051-161f1c1d2767_720x.png?v=1752591690'
+      ]
     },
     glide: {
-      brown: 'https://mindsightnow.com/cdn/shop/files/Glide_Brown_685724c5-9fc4-411b-953d-aa0f866e8901_720x.png?v=1752591674',
-      gray: 'https://mindsightnow.com/cdn/shop/files/Glide_Gray_a5694e52-87d5-4e5c-8991-83156eb6d7a7_720x.png?v=1752591654'
+      brown: [
+        'https://mindsightnow.com/cdn/shop/files/Glide_Brown_685724c5-9fc4-411b-953d-aa0f866e8901_720x.png?v=1752591674'
+      ],
+      gray: [
+        'https://mindsightnow.com/cdn/shop/files/Glide_Gray_a5694e52-87d5-4e5c-8991-83156eb6d7a7_720x.png?v=1752591654'
+      ]
     },
     info: {
       howItWorks: 'https://mindsightnow.com/cdn/shop/files/KWA_master_720x.jpg?v=1749004376',
@@ -40,20 +82,27 @@ const KineticWallArtHero2 = () => {
     }
   };
 
-  // Current display images based on selected variant
+  // Current display images based on selected variant and color
   const getCurrentImages = () => {
-    const variantImages = productImages[selectedVariant];
-    const infoImages = productImages.info;
+    const variantImages = [];
+    if (productImages[selectedVariant] && productImages[selectedVariant][selectedColor]) {
+      variantImages.push(...productImages[selectedVariant][selectedColor]);
+    }
     
-    return [
-      variantImages.brown,
-      variantImages.gray,
-      ...(variantImages.custom ? [variantImages.custom] : []),
-      infoImages.howItWorks,
-      infoImages.assembly,
-      infoImages.handCrafted,
-      infoImages.testimonials
-    ].filter(Boolean);
+    // Add informational images
+    variantImages.push(
+      productImages.info.howItWorks,
+      productImages.info.assembly,
+      productImages.info.handCrafted,
+      productImages.info.testimonials
+    );
+    
+    return variantImages;
+  };
+
+  // Get current checkout URL
+  const getCurrentCheckoutUrl = () => {
+    return checkoutUrls[selectedVariant]?.[selectedColor] || 'https://mindsightnow.com/products/kinetic-wall-art';
   };
 
   const currentImages = getCurrentImages();
@@ -118,29 +167,32 @@ const KineticWallArtHero2 = () => {
   return (
     <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto">
-
-
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Image Gallery - Fixed Position */}
           <div className="space-y-6 lg:sticky lg:top-8">
             {/* Main Image */}
-            <div className="relative bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 cursor-pointer hover:shadow-2xl transition-shadow duration-300"
-                 onClick={() => window.open('https://mindsightnow.com/products/kinetic-wall-art', '_blank')}>
+            <div className="relative bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
               <img 
                 src={currentImages[currentImage]}
                 alt={`Mindsight Kinetic Wall Art - Image ${currentImage + 1}`}
-                className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-300"
+                className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover hover:scale-105 transition-transform duration-300"
               />
               
               {/* Navigation Arrows */}
               <button 
-                onClick={prevImage}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prevImage();
+                }}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all border border-gray-200"
               >
                 <ChevronLeft className="w-6 h-6 text-gray-700" />
               </button>
               <button 
-                onClick={nextImage}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextImage();
+                }}
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all border border-gray-200"
               >
                 <ChevronRight className="w-6 h-6 text-gray-700" />
@@ -212,7 +264,7 @@ const KineticWallArtHero2 = () => {
 
             {/* Variant Selection */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold" style={{ color: '#171717' }}>Select Design</h3>
+              <h3 className="text-lg font-semibold" style={{ color: '#171717' }}>Select Motion Pattern</h3>
               <div className="grid grid-cols-2 gap-4">
                 {variants.map((variant) => {
                   const icons = {
@@ -268,6 +320,27 @@ const KineticWallArtHero2 = () => {
               </div>
             </div>
 
+            {/* Color Selection */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold" style={{ color: '#171717' }}>Select Color</h3>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setSelectedColor('brown')}
+                  className={`flex-1 p-4 rounded-lg border-2 transition-all text-center ${selectedColor === 'brown' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-gray-300'}`}
+                >
+                  <div className="w-8 h-8 rounded-full mx-auto mb-2" style={{ backgroundColor: '#8B4513' }}></div>
+                  <div className="font-medium" style={{ color: '#171717' }}>Brown</div>
+                </button>
+                <button
+                  onClick={() => setSelectedColor('gray')}
+                  className={`flex-1 p-4 rounded-lg border-2 transition-all text-center ${selectedColor === 'gray' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-gray-300'}`}
+                >
+                  <div className="w-8 h-8 rounded-full mx-auto mb-2" style={{ backgroundColor: '#808080' }}></div>
+                  <div className="font-medium" style={{ color: '#171717' }}>Gray</div>
+                </button>
+              </div>
+            </div>
+
             {/* Key Features */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold" style={{ color: '#171717' }}>Key Features</h3>
@@ -315,7 +388,7 @@ const KineticWallArtHero2 = () => {
               
               <Button 
                 className="w-full text-lg py-6 font-semibold btn-orange"
-                onClick={() => window.open('https://mindsightnow.com/products/kinetic-wall-art', '_blank')}
+                onClick={() => window.open(getCurrentCheckoutUrl(), '_blank')}
               >
                 Buy Now - ${currentVariant.price}.00
               </Button>
@@ -329,7 +402,7 @@ const KineticWallArtHero2 = () => {
               </div>
             </div>
 
-            {/* See It In Action - Moved here */}
+            {/* See It In Action */}
             <div className="space-y-4 pt-4 border-t border-gray-100">
               <h3 className="text-lg font-semibold" style={{ color: '#171717' }}>See It In Action</h3>
               <div className="grid grid-cols-1 gap-4">
@@ -355,8 +428,6 @@ const KineticWallArtHero2 = () => {
                 ))}
               </div>
             </div>
-            
-
           </div>
         </div>
       </div>

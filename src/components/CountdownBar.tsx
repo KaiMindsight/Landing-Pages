@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 
-const CountdownBar = () => {
+interface CountdownBarProps {
+  showFreeShipping?: boolean;
+}
+
+const CountdownBar: React.FC<CountdownBarProps> = ({ showFreeShipping = false }) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 1,
     hours: 0,
@@ -35,11 +39,15 @@ const CountdownBar = () => {
     <div className="w-full py-3 text-center text-white font-semibold" style={{ backgroundColor: 'rgb(27, 43, 74)' }}>
       <div className="max-w-7xl mx-auto px-4">
         <span className="text-sm md:text-base">
-          🔥 LIMITED TIME: 25% OFF ENDS IN {timeLeft.days} DAY{timeLeft.days !== 1 ? 'S' : ''} {timeLeft.hours}H {timeLeft.minutes}M {timeLeft.seconds}S
+          {showFreeShipping ? (
+            "🚚 FREE SHIPPING ON ALL ORDERS"
+          ) : (
+            `🔥 LIMITED TIME: 25% OFF ENDS IN ${timeLeft.days} DAY${timeLeft.days !== 1 ? 'S' : ''} ${timeLeft.hours}H ${timeLeft.minutes}M ${timeLeft.seconds}S`
+          )}
         </span>
       </div>
     </div>
   );
 };
 
-export default CountdownBar; 
+export default CountdownBar;

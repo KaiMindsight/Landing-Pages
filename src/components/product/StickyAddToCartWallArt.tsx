@@ -2,7 +2,56 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const StickyAddToCartWallArt = () => {
+const StickyAddToCartWallArt = ({ selectedVariant = 'ripple', selectedColor = 'brown' }) => {
+  // Checkout URLs mapping
+  const checkoutUrls = {
+    bloom: {
+      brown: 'https://mindsightnow.com/cart/45547855806626:1',
+      gray: 'https://mindsightnow.com/cart/45547855773858:1'
+    },
+    wander: {
+      brown: 'https://mindsightnow.com/cart/45547855872162:1',
+      gray: 'https://mindsightnow.com/cart/45547855904930:1'
+    },
+    glide: {
+      brown: 'https://mindsightnow.com/cart/45547855970466:1',
+      gray: 'https://mindsightnow.com/cart/45547856003234:1'
+    },
+    ripple: {
+      brown: 'https://mindsightnow.com/cart/45547856134306:1',
+      gray: 'https://mindsightnow.com/cart/45547856101538:1'
+    }
+  };
+
+  // Product images organized by variant and color
+  const productImages = {
+    ripple: {
+      brown: 'https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Front_720x.jpg?v=1749004376',
+      gray: 'https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Variant_Gray_720x.jpg?v=1749004376'
+    },
+    bloom: {
+      brown: 'https://mindsightnow.com/cdn/shop/files/WB_-_bloom_brown_720x.jpg?v=1748883454',
+      gray: 'https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Variant_Bloom_Gray_720x.jpg?v=1749004376'
+    },
+    wander: {
+      brown: 'https://mindsightnow.com/cdn/shop/files/Wander_Brown_e9e9a763-c38b-4c1b-a66a-75de6f2d83fd_720x.png?v=1752591704',
+      gray: 'https://mindsightnow.com/cdn/shop/files/Wander_Gray_385baf0a-9613-4b72-9051-161f1c1d2767_720x.png?v=1752591690'
+    },
+    glide: {
+      brown: 'https://mindsightnow.com/cdn/shop/files/Glide_Brown_685724c5-9fc4-411b-953d-aa0f866e8901_720x.png?v=1752591674',
+      gray: 'https://mindsightnow.com/cdn/shop/files/Glide_Gray_a5694e52-87d5-4e5c-8991-83156eb6d7a7_720x.png?v=1752591654'
+    }
+  };
+
+  // Get current checkout URL
+  const getCurrentCheckoutUrl = () => {
+    return checkoutUrls[selectedVariant]?.[selectedColor] || 'https://mindsightnow.com/products/kinetic-wall-art';
+  };
+
+  // Get current product image
+  const getCurrentImage = () => {
+    return productImages[selectedVariant]?.[selectedColor] || productImages.ripple.brown;
+  };
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -36,7 +85,7 @@ const StickyAddToCartWallArt = () => {
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 rounded-lg flex items-center justify-center bg-white p-2">
               <img 
-                src="https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Front_720x.jpg?v=1749004376" 
+                src={getCurrentImage()} 
                 alt="Mindsight Kinetic Wall Art"
                 className="w-full h-full object-contain"
               />
@@ -57,7 +106,7 @@ const StickyAddToCartWallArt = () => {
             </div>
             <Button 
               className="text-lg px-8 py-6 font-semibold btn-orange"
-              onClick={() => window.open('https://mindsightnow.com/products/kinetic-wall-art', '_blank')}
+              onClick={() => window.open(getCurrentCheckoutUrl(), '_blank')}
             >
               Buy Now
             </Button>
@@ -70,7 +119,7 @@ const StickyAddToCartWallArt = () => {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-white p-1">
                 <img 
-                  src="https://mindsightnow.com/cdn/shop/files/Kinetic_Wall_Art_Front_720x.jpg?v=1749004376" 
+                  src={getCurrentImage()} 
                   alt="Mindsight Kinetic Wall Art"
                   className="w-full h-full object-contain"
                 />
@@ -86,7 +135,7 @@ const StickyAddToCartWallArt = () => {
             
             <Button 
               className="text-sm px-4 py-3 font-semibold whitespace-nowrap btn-orange"
-              onClick={() => window.open('https://mindsightnow.com/products/kinetic-wall-art', '_blank')}
+              onClick={() => window.open(getCurrentCheckoutUrl(), '_blank')}
             >
               Buy Now
             </Button>

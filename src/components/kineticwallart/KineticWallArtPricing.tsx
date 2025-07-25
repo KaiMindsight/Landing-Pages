@@ -1,6 +1,30 @@
 import { Check, Shield, HeartHandshake } from "lucide-react";
 
-const KineticWallArtPricing = () => {
+const KineticWallArtPricing = ({ selectedVariant = 'ripple', selectedColor = 'brown' }) => {
+  // Checkout URLs mapping
+  const checkoutUrls = {
+    bloom: {
+      brown: 'https://mindsightnow.com/cart/45547855806626:1',
+      gray: 'https://mindsightnow.com/cart/45547855773858:1'
+    },
+    wander: {
+      brown: 'https://mindsightnow.com/cart/45547855872162:1',
+      gray: 'https://mindsightnow.com/cart/45547855904930:1'
+    },
+    glide: {
+      brown: 'https://mindsightnow.com/cart/45547855970466:1',
+      gray: 'https://mindsightnow.com/cart/45547856003234:1'
+    },
+    ripple: {
+      brown: 'https://mindsightnow.com/cart/45547856134306:1',
+      gray: 'https://mindsightnow.com/cart/45547856101538:1'
+    }
+  };
+
+  // Get current checkout URL
+  const getCurrentCheckoutUrl = () => {
+    return checkoutUrls[selectedVariant]?.[selectedColor] || 'https://mindsightnow.com/products/kinetic-wall-art';
+  };
   return (
     <section className="pt-10 pb-20 px-4" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="max-w-7xl mx-auto">
@@ -69,7 +93,7 @@ const KineticWallArtPricing = () => {
 
               <button 
                 className="w-full py-4 text-lg font-semibold rounded-md border-0 transition-all duration-100 ease-in-out btn-orange"
-                onClick={() => window.open('https://mindsightnow.com/products/kinetic-wall-art', '_blank')}
+                onClick={() => window.open(getCurrentCheckoutUrl(), '_blank')}
               >
                 Buy Now - $370.00
               </button>
